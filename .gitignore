@@ -1,0 +1,28 @@
+# WordPress
+/wp-admin/
+/wp-includes/
+/wp-content/plugins/
+wp-config.php
+wp-content/uploads/
+wp-content/backup/
+
+# Local
+.env
+.env.local
+*.log
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Node
+node_modules/
+npm-debug.log
+
+# OS
+.DS_Store
+Thumbs.db
