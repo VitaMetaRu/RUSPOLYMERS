@@ -5,6 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="НОВАТЭК-ПОЛИМЕР - производство полиэтиленовых пакетов и плёнки">
     <?php wp_head(); ?>
+    <style>
+        /* Hero Background - Industrial Production Image */
+        .hero {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.7) 0%, rgba(26, 26, 26, 0.6) 100%),
+                        url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1920&h=1080&fit=crop') center/cover fixed !important;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 30%, rgba(255, 215, 0, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            text-shadow: 0 4px 25px rgba(255, 215, 0, 0.4),
+                         0 0 40px rgba(0, 0, 0, 0.9);
+        }
+        
+        .hero .highlight {
+            color: #FFD700;
+            text-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+        }
+    </style>
 </head>
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
