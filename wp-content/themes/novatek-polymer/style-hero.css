@@ -1,0 +1,163 @@
+/* Hero Background Image Styles */
+
+/* Hero Section with Background */
+.hero {
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.75) 0%, rgba(26, 26, 26, 0.65) 100%),
+              url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><defs><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" result="noise" /><feColorMatrix in="noise" type="saturate" values="0.3" /></filter></defs><rect width="1920" height="1080" fill="%23333"/><circle cx="200" cy="150" r="300" fill="%23FFD700" opacity="0.15" /><circle cx="1700" cy="900" r="400" fill="%23FFD700" opacity="0.1" /><path d="M 0 500 Q 500 400 1000 500 T 2000 500" stroke="%23FFD700" stroke-width="2" fill="none" opacity="0.2" /><rect x="100" y="200" width="400" height="600" fill="%23555" opacity="0.1" rx="10"/><circle cx="1800" cy="300" r="200" fill="%23FFD700" opacity="0.12" /></svg>');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated Background Elements */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 30%, rgba(255, 215, 0, 0.08) 0%, transparent 50%);
+  animation: float 20s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(-30px) translateX(20px);
+  }
+}
+
+/* Glow Effect for Text */
+.hero h1 {
+  text-shadow: 0 4px 20px rgba(255, 215, 0, 0.3),
+               0 0 30px rgba(0, 0, 0, 0.8);
+  animation: glow 3s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 4px 20px rgba(255, 215, 0, 0.3),
+                 0 0 30px rgba(0, 0, 0, 0.8);
+  }
+  50% {
+    text-shadow: 0 4px 20px rgba(255, 215, 0, 0.5),
+                 0 0 40px rgba(255, 215, 0, 0.2),
+                 0 0 60px rgba(0, 0, 0, 0.8);
+  }
+}
+
+/* Highlight Color with Animation */
+.hero .highlight {
+  color: #FFD700;
+  animation: pulse-yellow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-yellow {
+  0%, 100% {
+    color: #FFD700;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+  }
+  50% {
+    color: #FFEB3B;
+    text-shadow: 0 0 40px rgba(255, 215, 0, 0.8);
+  }
+}
+
+/* Industrial Style Background Pattern */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 215, 0, 0.03) 2px,
+      rgba(255, 215, 0, 0.03) 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 215, 0, 0.03) 2px,
+      rgba(255, 215, 0, 0.03) 4px
+    );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Feature Icons Animation */
+.feature-icon {
+  animation: slideUp 0.8s ease-out backwards;
+}
+
+.feature-icon:nth-child(1) { animation-delay: 0.1s; }
+.feature-icon:nth-child(2) { animation-delay: 0.2s; }
+.feature-icon:nth-child(3) { animation-delay: 0.3s; }
+.feature-icon:nth-child(4) { animation-delay: 0.4s; }
+.feature-icon:nth-child(5) { animation-delay: 0.5s; }
+.feature-icon:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover Effects */
+.feature-icon:hover {
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}
+
+.feature-icon svg {
+  animation: rotate 20s linear infinite;
+}
+
+.feature-icon:hover svg {
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero {
+    background-attachment: scroll;
+  }
+  
+  .hero h1 {
+    text-shadow: 0 2px 10px rgba(255, 215, 0, 0.2),
+                 0 0 15px rgba(0, 0, 0, 0.6);
+  }
+}
